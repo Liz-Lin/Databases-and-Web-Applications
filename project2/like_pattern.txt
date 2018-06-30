@@ -1,0 +1,27 @@
+Title: 
+since it's hard for user to memorize the entire movie's name,
+so we decide to let user only need to enter part of movie name.
+LIKE '%partial_name%'
+
+Director
+since it's hard for user to memorize the entire director's name,
+so we decide to let user only need to enter part of their name.
+LIKE '%partial_name%'
+
+Year:
+need to be exactly matching, or it will give way too many results
+
+Actor:
+since it's hard for user to memorize the entire actor's name,
+so we decide to let user only need to enter part of their name.
+In addition, if user enter more than one name (separate by space)
+it will help user to match each name individually, 
+then combine all the results together.
+LIKE '%partial_name_1' OR '%partial_name_2%' OR '%partial_name_3%'.....
+
+
+Note:
+The attribute above are AND combine together. If user enter more information
+about one movie, it means either user knows more about that movie, or 
+want to narrow the result down. So we decide to ADD all the attribute together,
+but inside of each one we will use LIKE to aid user in searching.

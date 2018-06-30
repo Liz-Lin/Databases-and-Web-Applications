@@ -1,0 +1,118 @@
+<!-- This page will be seen if you logged in -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/custom.css">
+
+
+    <title>Fablix</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">Fablix</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search.html">Advanced Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="/shopping-cart.html">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> shopping cart
+                    </a>
+                </li>
+            </ul>
+
+
+            <form class="form-inline my-2 my-lg-0">
+                <input id="autocomplete" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="autocomplete-button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <a class=" my-0 my-lg-0" href="javascript:onClickSignout();">
+                sign out
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h1 class="display-1 text-center">Welcome to Fablix!</h1>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-outline-primary btn-block" href="search.html" role="button">Advanced Search</a>
+        </div>
+        <div class="col">
+            <a class="btn btn-outline-primary btn-block" href="list.html?all=1&orderBy=title&offset=0&limit=20&isASC=0" role="button">Browse Movies</a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Browse by genres</h3>
+        </div>
+    </div>
+    <div class="row" id="genre-group">
+    </div>
+    <div class="row">
+            <h3>Browsing by movie title</h3>
+    </div>
+    <div class="row">
+        <p>
+            <a href="list.html?startsWith=digit">#</a>&ensp;
+            <a href="list.html?startsWith=a">A</a>&ensp;
+            <a href="list.html?startsWith=b">B</a>&ensp;
+            <a href="list.html?startsWith=c">C</a>&ensp;
+            <a href="list.html?startsWith=d">D</a>&ensp;
+            <a href="list.html?startsWith=e">E</a>&ensp;
+            <a href="list.html?startsWith=f">F</a>&ensp;
+            <a href="list.html?startsWith=g">G</a>&ensp;
+            <a href="list.html?startsWith=h">H</a>&ensp;
+            <a href="list.html?startsWith=i">I</a>&ensp;
+            <a href="list.html?startsWith=j">J</a>&ensp;
+            <a href="list.html?startsWith=k">K</a>&ensp;
+            <a href="list.html?startsWith=l">L</a>&ensp;
+            <a href="list.html?startsWith=m">M</a>&ensp;
+            <a href="list.html?startsWith=n">N</a>&ensp;
+            <a href="list.html?startsWith=o">O</a>&ensp;
+            <a href="list.html?startsWith=p">P</a>&ensp;
+            <a href="list.html?startsWith=q">Q</a>&ensp;
+            <a href="list.html?startsWith=r">R</a>&ensp;
+            <a href="list.html?startsWith=s">S</a>&ensp;
+            <a href="list.html?startsWith=t">T</a>&ensp;
+            <a href="list.html?startsWith=u">U</a>&ensp;
+            <a href="list.html?startsWith=v">V</a>&ensp;
+            <a href="list.html?startsWith=w">W</a>&ensp;
+            <a href="list.html?startsWith=x">X</a>&ensp;
+            <a href="list.html?startsWith=y">Y</a>&ensp;
+            <a href="list.html?startsWith=z">Z</a></p>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+<script src="index.js"></script>
+<script src="util.js"></script>
+<script src="auto-complete.js"></script>
+</body>
+</html>

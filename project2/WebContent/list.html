@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">-->
+    <!--<link rel="stylesheet" type="text/css"-->
+          <!--href="jquery-datatables-alphabetSearch/css/dataTables.alphabetSearch.bootstrap.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="jquery-datatables-alphabetSearch/css/dataTables.alphabetSearch.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/custom.css">
+
+    <title>Fablix</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">Fablix</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search.html">Advanced Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="/shopping-cart.html">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> shopping cart
+                    </a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input id="autocomplete" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="autocomplete-button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <a class=" my-2 my-lg-0" href="javascript:onClickSignout();">
+                sign out
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container"><h1 class="display-1 text-center">Fablix</h1>
+    <h3 id="movie_info"></h3>
+<div class="row">
+
+</div>
+<div class="row">
+
+    <table id="movie_table" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th><a href="javascript:setSortBy('title')"> Movie Title </a></th>
+            <th>Release Year</th>
+            <th>Director</th>
+            <th>Genres</th>
+            <th>Stars</th>
+            <th><a href="javascript:setSortBy('rating')">Rating </a></th>
+        </tr>
+        </thead>
+
+        <!-- Table body is left empty here, will be populated with the data retrieved with single-star.js -->
+        <!-- single-star.js will find this html element by it's id "movie_table_body" -->
+        <tbody id=movie_table_body></tbody>
+    </table>
+</div>
+<div class="row">
+            <div class="dropdown col-2 offset-8">
+                <button id="limitButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:changeLimit(10);">10</a>
+                    <a class="dropdown-item" href="javascript:changeLimit(20)">20</a>
+                    <a class="dropdown-item" href="javascript:changeLimit(30)">30</a>
+                    <a class="dropdown-item" href="javascript:changeLimit(40)">40</a>
+                    <a class="dropdown-item" href="javascript:changeLimit(50)">50</a>
+                    <a class="dropdown-item" href="javascript:changeLimit(100)">100</a>
+                </div>
+            </div>
+        <ul class="pagination col-2">
+            <li id="prev" class="page-item"><a class="page-link" href="javascript:nextPage(0)">Previous</a></li>
+            <li id="next" class="page-item"><a class="page-link" href="javascript:nextPage(1)">Next</a></li>
+        </ul>
+</div>
+
+</div>
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+
+<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>-->
+<!--<script src="jquery-datatables-alphabetSearch/js/dataTables.alphabetSearch.js"></script>-->
+<script src="util.js"></script>
+<script src="list.js"></script>
+<script src="auto-complete.js"></script>
+</body>
+</html>

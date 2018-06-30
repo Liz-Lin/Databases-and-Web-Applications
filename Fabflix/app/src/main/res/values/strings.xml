@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Fabflix</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <!-- https://10.0.2.2: is local host
+    https://52.53.40.250:8443/ is remote aws host
+    -->
+    <!--<string name="API_host">https://10.0.2.2:8443/</string>-->
+    <string name="API_host">https://52.53.40.250:8443/</string>
+    <string name="API_login">api/login</string>
+    <string name="API_movie_list">api/list</string>
+    <string name="API_is_user_login">api/is_user_login</string>
+    <string name="API_movie_list_limit">10</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="searchBoxText">Movie title</string>
+    <string name="action_search">Search</string>
+    <string name="title_movie_list">List</string>
+    <string name="nextButton">next</string>
+    <string name="prevButton">prev</string>
+</resources>

@@ -1,0 +1,62 @@
+body {
+    font-family: Arial;
+    /*padding-top: 70px;*/
+}
+
+* {
+    box-sizing: border-box;
+}
+.search-container{
+    margin:auto;
+    max-width:600px;
+}
+.search-container input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+.search-container button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #0b7dda;
+}
+
+.search-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.creditcard-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 50px auto;
+}
+form {
+    margin: 30px;
+}
+input {
+    width: 200px;
+    margin: 10px auto;
+    display: block;
+}
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }

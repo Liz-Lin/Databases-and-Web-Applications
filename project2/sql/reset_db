@@ -1,0 +1,6 @@
+#!/bin/bash
+mysql --user="jenny" --password="cs122b" "moviedb" < /home/ubuntu/cs122b-spring18-team-43/project2/sql/createtable.sql
+
+mysql --user="jenny" --password="cs122b" "moviedb" < /home/ubuntu/cs122b-spring18-team-43/project2/sql/movie-data.sql
+
+mysql --user="jenny" --password="cs122b" "moviedb" < /home/ubuntu/cs122b-spring18-team-43/project2/sql/project3_add_movie.sql

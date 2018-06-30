@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/custom.css">
+    <title>Dashboard: stars</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/_dashboard/index.html">Fablix</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/_dashboard/index.html">Dashboard <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/_dashboard/stars.html">Stars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/_dashboard/movie.html">Movies</a>
+                </li>
+            </ul>
+            <!--<form class="form-inline my-2 my-lg-0">-->
+            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+            <!--</form>-->
+
+            <a class=" my-2 my-lg-0" href="javascript:onClickSignout();">
+                sign out
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h3 id="Stars">Add star</h3>
+    <div class="row justify-content-md-center">
+        <div class="col-5">
+            <form id="add-star-form" method="post" action="#">
+
+                <div class="form-group">
+                    <label><b>Name *</b></label>
+                    <input type="text" class="form-control" placeholder="Enter name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label><b>Birth Year *</b></label>
+                    <input type="number" min="1800" max="2018" class="form-control" placeholder="Enter birth year" name="birthYear">
+                </div>
+                <input type="submit" value="add star" class="form-control btn btn-primary">
+            </form>
+        </div>
+
+    </div>
+    <div class="row justify-content-md-center">
+        <p id="result-msg"></p>
+    </div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="../util.js"></script>
+<script src="dash-star.js"></script>
+</body>
+</html>

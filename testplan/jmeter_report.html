@@ -1,0 +1,136 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: linen;
+}
+
+td {
+    border-top-style: solid;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Single-instance version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="Graph_Results_single_3.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>85</td>
+    <td>52</td>
+    <td>21</td>
+    <td>Log file: test_single_3.txt<br/> 
+      With only 1 thread(user), it is very fast to retrive the result because it can reuse the prepared statement again and again and have the pooling 
+      to improve the performance.
+    </td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="Graph_Results_single_4.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>358</td>
+    <td>316</td>
+    <td>183</td>
+    <td>Log file: test_single_4.txt<br/>
+    It is comparatively slower than having only 1 thread. Because here we have 10 users and we have more statements.
+    </td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTPS/10 threads</td>
+    <td><img src="Graph_Results_single_5.png" alt="Graph Results Screenshot Case 3" style="width:304px;height:228px;"></td>
+    <td>357</td>
+    <td>302</td>
+    <td>176</td>
+    <td>Log file: test_single_5.txt<br/>
+    The reason HTTPS is faster, even though HTTPS takes more time due to encryption. However, since there are more website using HTTP, so the waiting/queuing time is longer, on the other hand, the queuing time for HTTPS overall is shorter. Which results in HTTPS faster.
+    </td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No prepared statements</td>
+    <td><img src="Graph_Results_single_1.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>2881</td>
+    <td>2826</td>
+    <td>2683</td>
+    <td>
+        Log file: test_single_1.txt<br/>
+      Without the prepared statement, it takes a very long time to finish the request and return the response. This shows the advantage of 
+      using prepared statement</td>
+  </tr>
+  <tr>
+    <td>Case 5: HTTP/10 threads/No connection pooling</td>
+    <td><img src="Graph_Results_single_2.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>363</td>
+    <td>312</td>
+    <td>198</td>
+    <td>
+        Log file: test_single_2.txt<br/>
+        Compare to HTTP/10 thread with connection pooling, this one is slightly slower. Because with pooling, we can reuse the connections as long as they are avilable. Without pooling, we have to re-establish the connection for every query.
+    </td>
+  </tr>
+
+</table> 
+
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Scaled version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="Graph_Results_scale_3.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>81</td>
+    <td>49</td>
+    <td>21</td>
+    <td>
+        Log file: test_scale_3.txt<br/>
+        Becasue we only have one thread. So result should be very similar to the single-instance version. Because we need at lease two thread to be able to see the difference.
+    </td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="Graph_Results_scale_4.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>340</td>
+    <td>292</td>
+    <td>171</td>
+    <td>Log file: test_scale_4.txt<br/>
+    	This one is a faster than the single-instance one, but won't be as low to half of the time, because there are overhead of redirecting and sometime also using the same instance due the sticky session. But the overall time is faster, means it deos successfully balance the load.
+    </td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTP/10 threads/No prepared statements</td>
+    <td><img src="graph_results_scale_1.png" alt="Graph Results Screenshot Case 3" style="width:304px;height:228px;"></td>
+    <td>2857</td>
+    <td>2716</td>
+    <td>2605</td>
+    <td>Log file: test_scale_1.txt<br/>
+    No prepared statements dramtically slows down the process. But still much faster than the single-instance!! 
+    </td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No connection pooling</td>
+    <td><img src="graph_results_scale_2.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>330</td>
+    <td>286</td>
+    <td>187</td>
+    <td>Log file: test_scale_2.txt<br/>
+    Since there is no connection pooling, so it's a liitle bit slower than case 2. But still much faster than the no prepared statments one, since we dont have to open the connection and close them over and over again.
+    </td>
+  </tr>
+
+</table> 
+
+</body>
+</html>

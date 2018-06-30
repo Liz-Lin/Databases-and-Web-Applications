@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/custom.css">
+
+    <title>Login to Fablix</title>
+
+</head>
+<body>
+<div class="container">
+
+    <h2 class="display-1 text-center">Login to dashboard</h2>
+    <!-- Set the method to POST to avoid email/password showing on URL
+         Disable the default action because our JS function will handle it. -->
+
+    <div class="row justify-content-md-center">
+        <div class="col-5">
+            <form id="login_form" method="post" action="#">
+                <div class="form-group">
+                    <label><b>email</b></label>
+                    <input type="text" class="form-control" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label><b>Password</b></label>
+                    <input type="password" class="form-control" placeholder="Enter Password" name="password">
+                </div>
+                <input type="submit" value="Login" class="btn btn-primary">
+                <div class="g-recaptcha" data-sitekey="6LejLlgUAAAAAFivY7lNboJ8u3geyh24d3oDtEys"></div>
+            </form>
+        </div>
+    </div>
+    <div id="login_error_message"></div>
+
+
+</div>
+
+<!-- include jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- include our own JS file -->
+<script src="../dash-login.js"></script>
+
+</body>
+</html>

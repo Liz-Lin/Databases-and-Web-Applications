@@ -1,0 +1,12 @@
+CS122B Optimization Report
+
+Time: Fast!!!!
+
+We used three different ways to optimize our overall performance.
+
+First we used the batch insert, since we only have to execute the Xact twice. One is for inserting all new datas into the movies, genre, and genres_in_movies tables. This is necessary because first we need to insert all the new movies we got from mian.xml into the database, if not when we adding the new stars_in_movies relation, the new movie does not exist, which cause we have to denny the insertion. So we decide to insert all the movies and genres, then we add all the new stars and update stars_in_movies relationship which is the second Xact among themllz
+
+
+Second way to optimize the whole process is when we parse the three xml files, we save them into a Map, which makes checking the redundancy much easier and faster, by every time before we add the new data into the Map, we first check if it already in the map (containsKey method)
+
+Third way to optimize the process is first we bring all the related data from the database  into the memory, and also create a new set of structures to save all the data we are going to insert into the database. The reason we bring related data out is querying the database is expensive, especially if we have to query the database every time when we encounter a new data. And we also create a new data structure for each the new set of datas we are going to insert into the table. So in the end , we just need to loop through all the new data structures and add them to batch and insert them all at once. 
